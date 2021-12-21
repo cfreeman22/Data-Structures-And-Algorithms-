@@ -81,6 +81,15 @@ for index, row in long_time.iterrows():
 
 
 
+# Big O = O(10 N)
+
+# There are 10 steps to solve this problem
+
+#dropping costants 
+
+#==> O(N)
+
+
 
 
 

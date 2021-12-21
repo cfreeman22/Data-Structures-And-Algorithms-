@@ -30,7 +30,7 @@ import pandas as pd
 # creates variables to store timestamp, calling numbers, receiving number, and call duration
 # convert timestamps to datetime object, and convert durations to integer
 
-times_stamp = [x[2] for x in calls]
+times_stamp = [x[2] for x in calls] 
 
 calling_number = [x[0] for x in calls]
 
@@ -101,7 +101,7 @@ text_df = pd.DataFrame(my_text_dict)
 
 #extracting first text with time
 
-first_text = min(times_stamp)
+#first_text = min(times_stamp_text)
 
 first_text = text_df.times_stamp.min()
 
@@ -115,6 +115,15 @@ for index, row in first_text_record.iterrows():
 
 
 
+
+
+# Big O = O(16 N)
+
+# There are 16 steps to solve this problem
+
+#dropping costants 
+
+#==> O(N)
 
 
 

@@ -59,5 +59,14 @@ def unique(x):
 unique(all_calls_and_text_numbers)
 
 
+# Big O = O(7 N)
+
+# There are 7 steps to solve this problem
+
+#dropping costants 
+
+#==> O(N)
+
+
 
 
