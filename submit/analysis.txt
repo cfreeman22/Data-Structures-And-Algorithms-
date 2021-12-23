@@ -1,0 +1,23 @@
+TASK0
+Input size = O(n) for both exercises
+To access ith element, addr(a[0]) + i*size(object). 
+This term is independent of n, so it is  O(1).
+
+
+TASK1
+
+iterates n times, so if both exercises has O(1) running time,
+ then the loop as a whole has O(n) running time.
+the program takes less time to complete and uses less space
+
+TASK2
+
+Similar to TASK1, the loop as a whole has O(n) running time. for both steps in the exercise
+
+TASK3
+
+takes 7 steps to complete with individual for loops that have O(n) running time
+
+TASK4
+
+Takes 2 steps to complete with individual for loops that have O(n) running time

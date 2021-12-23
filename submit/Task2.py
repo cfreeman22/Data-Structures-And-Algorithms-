@@ -26,80 +26,30 @@ Print a message:
 September 2016.".
 """
 
-# lets creaate variables to dissect to dissect the the the two tables
+# creating  a dictionary phone_dict to capture the the phone numbers and time spent
+# we note that calling numbers might also be at receiving end 
+# capturing calling numbers and time spent
 
-#First off i will be using pandas , and i will create  dataframes for text and calls
-# creates variables to store timestamp, calling numbers, receiving number, and call duration
-# convert timestamps to datetime object, and convert durations to integer
-
-times_stamp = [x[2] for x in calls]
-
-calling_number = [x[0] for x in calls]
-
-receiving_number = [x[1] for x in calls]
-
-duration_seconds = [x[3] for x in calls]
-
-#converting timestamp by creating an empty list and appending coverted time to the the list
-times_stamp2 =[]
-for x in times_stamp:
-    x = datetime.strptime(x,'%d-%m-%Y %H:%M:%S')
-    times_stamp2.append(x)
-
-# converting duration into integers
-duration_seconds2 =[]
-for x in duration_seconds:
-    x = int(x)
-    duration_seconds2.append(x)
-
-#creating a dictionary to store the variables we just created for calls records
-call_records = []
-for calling_num, receiving_num, times_stamp, duration_seconds in zip(calling_number, receiving_number, times_stamp2, duration_seconds2):
-    record = {'calling_num':calling_num, 'receiving_num':receiving_num,'times_stamp':times_stamp,'duration_seconds':duration_seconds}
-    call_records.append(record)
-
-    
-# Let group the calls and sum the durations in seconds for every calling number
-#first lest sort it for easy grouping
-sorted_calls = sorted(call_records, key=operator.itemgetter('calling_num'))
-
-grouped_list = []
-for key, items in itertools.groupby(sorted_calls, operator.itemgetter('calling_num')):
-    grouped_list.append(list(items))    
+phone_dict={}
+for call in calls:
+    phone_dict[call[0]] = phone_dict.get(call[0],0) + int(call[3])
     
     
     
+# capturing receiving numbers and time spent and updating the phone_dict
+
+for call in calls:
+    phone_dict[call[1]] = phone_dict.get(call[1],1) + int(call[3])
+    phone_dict.update()
     
-# let's extract calling number group by call duration and get the longest time
-duration = []
-for item in grouped_list:
-    call_num = item[0]['calling_num']
-    size = len(item)
-    total =0 
-    for k in range(size):
-        total += (item[k]['duration_seconds'])
-    duration.append((call_num, total))
-    
-    
-# longest time
 
-long = max(duration,key=operator.itemgetter(1))
+# extrating the longest time spent using the max() built in function and itemgetter from the opreator module  
 
-print(f"{long[0]} spent the longest time, {long[1]} seconds, on the phone during September 2016.")
+longest_time = max(phone_dict.items(), key=operator.itemgetter(1))
 
+# print the message with the longest time spent
 
-# performed the same operation with receiving number but the value was 47046 wich is less than the calling number with the longest time
-
-# Big O = O(8 N)
-# Big O (n^2)
-# There are 10 steps to solve this problem
-
-#dropping costants 
-
-#==> O(N^2)
-
-
-
+print("{0} spent the longest time, {1} seconds, on the phone during September 2016.".format(*longest_time))
 
 
 

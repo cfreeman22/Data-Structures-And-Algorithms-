@@ -18,51 +18,23 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-# first i will extract using indexing the calling number and recieving number from both the call and text lists and store them in predefined variables (lists)
-
-# extracting calling number in texts list
-calling_num_text = [x[0] for x in texts]
-
-# extracting receiving number in text list
-receiving_number_text = [x[1] for x in texts]
-
-
-# extracting calling number in calls list
-
-calling_number_calls = [x[0] for x in calls]
-
-# extracting receiving number in call list
-
-receiving_number_calls = [x[1] for x in calls]
-
-# next I will combine all the lists to have just one list of all numbers
-
-all_calls_and_text_numbers = calling_num_text + calling_number_calls + receiving_number_calls +receiving_number_text
-
-# Next i will define a function to extract unique values(numbers) from the list 
-# function to get unique numbers
-def unique(x):
  
-    # initialize a null list
-    unique_list = []
-     
-    # traverse for all elements
-    for num in x:
-        # check if exists in unique_list or not
-        if num not in unique_list:
-            unique_list.append(num)
-    # print the len of the unique list to get the value of unique numbers
-    print(f"There are {len(unique_list)} different telephone numbers in all text and calls records.")
+# creating a set unique_tele_nums to extract unique Telephone numbers from the calls and texts records
+
+unique_tele_nums = set()
+for call in calls:
+    unique_tele_nums.add(call[0])
+    unique_tele_nums.add(call[1])
+
+
+
+# adding unique texts telephone numbers to the unique_tele_nums set
+
+for text in texts:
+    unique_tele_nums.add(text[0])
+    unique_tele_nums.add(text[1])
     
-#printing the message to show the count of different telephone numbers    
-unique(all_calls_and_text_numbers)
+    
+#printing the list of unique telephone numbers in the set
 
-
-# Big O = O(7 N)
-
-# There are 7 steps to solve this problem
-
-#dropping costants 
-
-#==> O(N)
-
+print(f'There are {len(unique_tele_nums)} different telephone numbers in the records.')
