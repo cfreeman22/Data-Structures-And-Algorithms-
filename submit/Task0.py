@@ -25,9 +25,9 @@ from datetime import datetime
 from operator import itemgetter
 
 
-# lets creaate variables to dissect to dissect the the the two tables
+# lets creaate variables to dissect to dissect the two tables
 
-#First off i will be using pandas , and i will create  dataframes for text and calls
+#First off i will be using lists of dictionaries for text and calls
 # creates variables to store timestamp, calling numbers, receiving number, and call duration
 # convert timestamps to datetime object, and convert durations to integer
 
@@ -88,6 +88,7 @@ text_records = []
 for calling_num, receiving_num, times in zip(calling_num_text, receiving_number_text, times_stamp_text):
     record = {'calling_num':calling_num, 'receiving_num':receiving_num, 'times_stamp':times}
     text_records.append(record)
+    
 #looking for texting time
 
 
