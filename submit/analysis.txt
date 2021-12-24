@@ -17,7 +17,8 @@ Similar to TASK1, the loop as a whole has O(n) running time. for both steps in t
 TASK3
 
 takes 7 steps to complete with individual for loops that have O(n) running time
+for sorting unique area code  log(N) is the minimum number of bits to uniquely define a code in the range len(unique_codes). The minimum number of operations to search for a number in an array would also be log(N). Since log(N) defines time required to find the appropriate index for a given element from the unsorted array to the sorted array, if we assume that n terms exist, then the time complexity is n * log(n). The worst-case time complexity will be O(n log n).
 
 TASK4
 
-Takes 2 steps to complete with individual for loops that have O(n) running time
+Similar to Task3, The worst-case time complexity will be O(n log n).

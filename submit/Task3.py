@@ -68,8 +68,10 @@ all_fix_lines = [x[1].split(')') for x in fix_lines]
 all_fix_lines_codes = [x[0] + x[0].join(')') for x in all_fix_lines]
 
 # repeating the same proccess for calls initiated by area code (080) to mobile numbers starting with 7, 8, 9
+mobile_list = [x[1] for x in calls_by_080 if x[1].startswith('7') or x[1].startswith('8') or x[1].startswith('9')]
 
-mobile_num_codes = [x[1][:4] for x in calls_by_080 if " " in x[1]]
+#checking for the space 
+mobile_num_codes = [x[:4] for x in mobile_list if " " in x]
 
  
 # creating a list of all calls initiated by (080) to all area codes 
