@@ -1,10 +1,13 @@
 from collections import OrderedDict
 class LRU_Cache(object):
 
+# Lets initialize the capacity
+
     def __init__(self, capacity):
         self.cache = OrderedDict()
         self.capacity = capacity
 
+# we need to return the value of the key and move the key to the end for recently used key
     def get(self, key):
         
         if key not in self.cache:
@@ -14,11 +17,14 @@ class LRU_Cache(object):
             self.cache.move_to_end(key)
             return self.cache[key]
 
+# lets add / update the key, move it to the end, and check whether the length of the ordered dict has exceeded the capacity
     def set(self, key, value):
         self.cache[key] = value
         self.cache.move_to_end(key)
         if len(self.cache) > self.capacity:
             self.cache.popitem(last = False)
+
+# initializing the cache with the capacity of 5            
 our_cache = LRU_Cache(5)
 
 our_cache.set(1, 1);
