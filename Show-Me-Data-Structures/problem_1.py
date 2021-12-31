@@ -24,7 +24,8 @@ class LRU_Cache(object):
         if len(self.cache) > self.capacity:
             self.cache.popitem(last = False)
 
-# initializing the cache with the capacity of 5            
+# initializing the cache with the capacity of 5
+# Testing            
 our_cache = LRU_Cache(5)
 
 our_cache.set(1, 1);
