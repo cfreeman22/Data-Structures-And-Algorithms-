@@ -1,0 +1,34 @@
+Explanations:
+
+
+PROBLEM 1
+
+I found the the ordered dictionary to be an ideal solution to solve this problem. It was able to achieve the the O(1) for the operations,, which provides constant times access to values associated with a specific key.
+
+
+
+PROBLEM 2
+
+Using a recursive function to tackle this problem was not an easy task for me . However, the function waas able to perform with a time complexity of O(n) to iterate in every folders and subfolders in the directory to find files ending with a .c
+
+
+PROBLEM 3
+
+- bulding a tree Time Complexity = O(n) + O(n) + (n-1) * O(logn) = O(NlogN)
+- Huffman encoding O(n)
+- Huffman decoding O(n)
+
+
+PROBLEM 4
+
+finding is a user is in a particular group was solve using recursion as well and the time complexity is O(depth * num of users)
+
+
+PROBLEM 5 
+
+I used a linked list to solve this problem where each new node references the previous node. keeping track of what is appended at the end of the list, this function was able to reduce the time complexity to O(1)
+
+
+PROBLEM 6
+
+The function created to solve this problem was able to perform at a time complexity of O(n) for both the union , and intersection 

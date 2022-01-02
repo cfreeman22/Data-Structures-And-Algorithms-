@@ -15,10 +15,10 @@ class Tree:
 
 def our_tree(text):
     counter = Counter(text)
-    priority_q = [Tree(ch, counter[ch]) for ch in counter]
-    heapq.heapify(priority_q)
+    priority_q = [Tree(ch, counter[ch]) for ch in counter] # O(n)
+    heapq.heapify(priority_q) # O(n)
     while len(priority_q) > 1:
-        left = heapq.heappop(priority_q)
+        left = heapq.heappop(priority_q) #---> O(logn)
         right = heapq.heappop(priority_q)
         parent = Tree(None, left.freq+right.freq, left, right)
         heapq.heappush(priority_q, parent)
